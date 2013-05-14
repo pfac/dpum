@@ -4,7 +4,7 @@
   <title><![CDATA[Desafios de Programação da Universidade do Minho]]></title>
   <link href="http://pfac.github.io/dpum/atom.xml" rel="self"/>
   <link href="http://pfac.github.io/dpum/"/>
-  <updated>2013-05-14T19:25:26+01:00</updated>
+  <updated>2013-05-14T19:47:30+01:00</updated>
   <id>http://pfac.github.io/dpum/</id>
   <author>
     <name><![CDATA[DPUM]]></name>
@@ -18,7 +18,11 @@
     <link href="http://pfac.github.io/dpum/blog/2013/05/14/hello-world/"/>
     <updated>2013-05-14T10:22:00+01:00</updated>
     <id>http://pfac.github.io/dpum/blog/2013/05/14/hello-world</id>
-    <content type="html"><![CDATA[<p>O blog dos DPUM está oficialmente no ar. Para já, este blog será o único meio de comunicação para o clube, sendo adicionadas outras plataformas em função da adesão às actividades. Vejam isto como <em>achievements</em>:</p>
+    <content type="html"><![CDATA[<p>O blog dos DPUM está oficialmente no ar.</p>
+
+<!--more-->
+
+<p>Para já, este blog será o único meio de comunicação para o clube, sendo adicionadas outras plataformas em função da adesão às actividades. Vejam isto como <em>achievements</em>:</p>
 
 <table><thead>
 <tr>
