@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://pfac.github.io/dpum/sitemap.xml 

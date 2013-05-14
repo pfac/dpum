@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Desafios de Programação da Universidade do Minho]]></title>
+  <link href="http://pfac.github.io/dpum/atom.xml" rel="self"/>
+  <link href="http://pfac.github.io/dpum/"/>
+  <updated>2013-05-14T17:39:33+01:00</updated>
+  <id>http://pfac.github.io/dpum/</id>
+  <author>
+    <name><![CDATA[DPUM]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
