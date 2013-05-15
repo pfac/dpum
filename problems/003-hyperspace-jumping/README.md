@@ -3,28 +3,30 @@ Hyperspace Jumping
 
 ![Wormhole](https://raw.github.com/pfac/dpum/master/problems/003-hyperspace-jumping/img.jpg "Wormhole")
 
+
 ## Problem
 
 You want to know which systems you can reach by using wormholes. Your ship can use the wormholes by sending energy using the improbability drive. You can reach a system by using several wormholes. The problem is that each existing wormhole requires energy to use.
 
+
 ## Constraints
 
- Limit            | Description
-:----------------:|:----------------------------
- N < 10000        | The number of solar systems
- 1 <= H <= 10000  | The number of wormholes
- 1 <= S, U, V <=  | N IDs of the systems
- 1 <= E <= 100000 | Energy
+ Limit             | Description
+:-----------------:|:----------------------------
+ N < 10000         | The number of solar systems
+ 1 <= H <= 10000   | The number of wormholes
+ 1 <= S, U, V <= N | IDs of the systems
+ 1 <= E <= 100000  | Energy
 
 
 ## Input
 
-The input starts with a line containing the number of solar systems N, the initial amount of energy in the spaceship E, the starting system id S and the number of wormholes H. Each wormhole has information about the id of the starting system U, the destination V and the energy necessary for using the wormhole E.
+The input starts with a line containing the number of solar systems `N`, the initial amount of energy in the spaceship `E`, the starting system ID `S` and the number of wormholes `H`. Each wormhole has information about the ID of the starting system `U`, the destination `V` and the energy necessary for using the wormhole `E`.
 
 
 ## Output
 
-The output should be a line with the systems reachable from the starting system sepparated by a single space ordered by their id.
+The output should be a line with the systems reachable from the starting system sepparated by a single space ordered by their ID.
 
 
 ## Sample Input
