@@ -1,0 +1,14 @@
+graph {
+	A [shape=circle]
+	B [shape=circle]
+	C [shape=circle]
+	D [shape=circle]
+	E [shape=circle]
+	D0 [style=invis]
+	A -- B [label="1"]
+	A -- D [label="2"]
+	B -- C [label="3"]
+	D -- C [label="4"]
+	D -- D0 [style=invis]
+	D -- E [label="2"]
+}

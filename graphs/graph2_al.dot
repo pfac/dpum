@@ -1,0 +1,30 @@
+digraph {
+	nodesep=.05
+	rankdir=LR
+
+	node [shape=record, width=.1, height=.1]
+	ns [label="<a> A | <b> B | <c> C | <d> D | <e> E", height=2.5]
+
+	node [width=1]
+	ab [label="{<name> B | <value> 1 }"]
+	ad [label="{<name> D | <value> 2 }"]
+	ba [label="{<name> A | <value> 1 }"]
+	bc [label="{<name> C | <value> 3 }"]
+	cb [label="{<name> B | <value> 3 }"]
+	cd [label="{<name> D | <value> 4 }"]
+	da [label="{<name> A | <value> 2 }"]
+	dc [label="{<name> C | <value> 4 }"]
+	de [label="{<name> E | <value> 2 }"]
+	ed [label="{<name> D | <value> 2 }"]
+
+	ns:a     -> ab:name
+	ab:value -> ad:name
+	ns:b     -> ba:name
+	ba:value -> bc:name
+	ns:c     -> cb:name
+	cb:value -> cd:name
+	ns:d     -> da:name
+	da:value -> dc:name
+	dc:value -> de:name
+	ns:e     -> ed:name
+}
