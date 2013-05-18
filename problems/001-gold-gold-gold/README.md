@@ -26,7 +26,7 @@ You are given a map of the entire mine that contains Glóin's position as long a
 
 ## Input
 
-The input starts by a line containing the number of rows Rs and columns Cs on the map. The following lines contain the map. Each character can be:
+The input starts by a line containing the number of columns Cs and rows Rs on the map. The following lines contain the map. Each character can be:
 
  :symbols: | Description
 :---------:|:---------------------------
