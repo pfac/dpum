@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Flooding the Hyperspace - Desafios de Programação da Universidade do Minho</title>
+  <meta name="author" content="DPUM">
+
+  
+  <meta name="description" content="Rescaldo da sessão #3, grafos e um ornitorrinco. A sessão #3, empobrecida pelas ausências típicas das Monumentais Festas do Enterro da Gata, baseou- &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pfac.github.io/dpum/blog/2013/05/16/flooding-the-hyperspace">
+  <link href="/dpum/favicon.png" rel="icon">
+  <link href="/dpum/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/dpum/atom.xml" rel="alternate" title="Desafios de Programação da Universidade do Minho" type="application/atom+xml">
+  <script src="/dpum/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/dpum/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/dpum/">Desafios de Programação da Universidade do Minho</a></h1>
+  
+    <h2>Visitors are asked not to feed the code monkey</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/dpum/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pfac.github.io/dpum" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/dpum/">Blog</a></li>
+  <li><a href="/dpum/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Flooding the Hyperspace</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-16T23:18:00+01:00" pubdate data-updated="true">May 16<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Rescaldo da sessão #3, grafos e um ornitorrinco.</p>
+
+<!--more-->
+
+<p>A sessão #3, empobrecida pelas ausências típicas das Monumentais Festas do Enterro da Gata, baseou-se no tema de grafos. Durante a sessão fizemos uma revisão do que são grafos, como se representam, e resolvemos uma variante do problema <em>&quot;Hyperspace Jumping&quot;</em> com uma implementação do algoritmo <strong>flood fill</strong> aplicado a grafos.</p>
+
+<p>Segue abaixo um resumo para os ausentes. Deixem as vossas dúvidas mais imediatas nos comentários, e tragam as mais complexas para a próxima sessão.</p>
+
+<p><strong>NOTA:</strong> Desafio aqueles que estiveram presentes a responder às dúvidas dos colegas nos comentários. Têm aqui uma forma de tentar ganhar as recompensas que vos prometi <img alt="beer" src="/dpum/images/emoji/beer.png" class="emoji" />. Se não tiverem dúvidas para responder, estejam à vontade para transmitir o vosso feedback desta sessão (os menos corajosos que mandem as críticas ao <a href="http://en.wikipedia.org/wiki/Perry_the_Platypus">Perry</a>). </p>
+
+<h2 id="toc_1">Grafos</h2>
+
+<p><img src="/dpum/images/graphs/graph1.svg" alt="First example" title="First example">
+<img src="/dpum/images/graphs/digraph1.svg" alt="Directed Graph" title="Directed Graph"></p>
+
+<p>Um grafo é constituído por um conjunto de vértices e pelas arestas que os ligam. Grafos podem ser <strong>orientados (ou direcionados)</strong>, em que cada aresta só pode ser percorrida num dado sentido, ou <strong>não direcionados</strong>, em que as arestas são válidas para ambos os sentidos. Podem ainda ser <strong>cíclicos</strong> ou <strong>acíclicos</strong>, dependendo se, em algum vértice, é possível começar a percorrer arestas do grafo e voltar ao mesmo sítio.</p>
+
+<p><img src="/dpum/images/graphs/graph2.svg" alt="Graph with labels" title="Graph with labels"></p>
+
+<p>Tanto os vértices como as arestas de um grafo podem ter etiquetas, contendo informação relevante para o problema. Problemas com valores associados às arestas são típicos; este tipo de grafos são também chamados de <strong>pesados</strong>, por cada aresta ter um &quot;peso&quot; associado. Etiquetas nos vértices são usadas, por exemplo, para representar uma capacidade ou um custo de visita.</p>
+
+<h3 id="toc_2">Estruturas de dados</h3>
+
+<p>Existem basicamente duas formas distintas para representar grafos: <strong>matrizes de adjacências</strong> e <strong>listas de adjacências</strong>.</p>
+
+<p><img src="/dpum/images/tables/graph2.svg" alt="Adjacency Matrix" style="height:150px" /></p>
+
+<p>Matrizes de adjacências são matrizes quadradas, com uma coluna e linha para cada vértice. Cada célula <code>(i,j)</code> contém a etiqueta da aresta que liga o vértice <code>i</code> ao vértice <code>j</code>. Para grafos não direcionados esta matriz é simétrica. Para grafos não pesados, cada célula contem 0 ou 1, dependendo se a aresta existe ou não.</p>
+
+<p><img src="/dpum/images/graphs/graph2_al.svg" alt="Adjacency List" title="Adjacency List"></p>
+
+<p>Listas de adjacências são compostas por um vector, em que cada posição corresponde a um dos vértices (a origem da aresta). Em cada posição deste vector é colocada uma lista; cada célula corresponde a um vértice de destino, e pode ainda conter uma etiqueta com informação adicional.</p>
+
+<p>Cada forma tem os seus pontos fortes e fracos. Matrizes permitem acesso imediato e cada célula ocupa menos espaço em memória, mas as arestas não existentes também são representadas. Com listas apenas as arestas existentes ocupam espaço, mas o acesso é mais lento.</p>
+
+<p>A característica mais importante para decidir qual usar é a densidade de arestas. Um grafo com muito denso é melhor representado por uma matriz, enquanto que um grafo esparso é melhor representado com uma lista.</p>
+
+<h2 id="toc_3">Hyperspace Jumping (sort of)</h2>
+
+<p>Já está no <a href="https://github.com/pfac/dpum">repositório</a> o código feito <a href="https://github.com/pfac/dpum/tree/master/problems/003-hyperspace-jumping/flood.cpp">nesta sessão</a>. Este código usa uma lista de adjacências para representar o universo e resolve uma variação do problema <em>&quot;Hyperspace Jumping&quot;</em> sem as limitações impostas pelo gasto de energia da nave (sem estas limitações o algoritmo é um caso típico de <strong>flood fill</strong>) usando <em>Breadth First Search</em>.</p>
+
+<p>Na próxima sessão vamos extender este código para resolver completamente este problema, e estudar melhor o <em>&quot;The Toxic Clouds of Proxima III&quot;</em>. Tragam dúvidas e muita vontade.</p>
+
+<p><strong>Próxima sessão:</strong> Quinta-feira, 24 de Maio, 16h</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">pfac</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-16T23:18:00+01:00" pubdate data-updated="true">May 16<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pfac.github.io/dpum/blog/2013/05/16/flooding-the-hyperspace/" data-via="" data-counturl="http://pfac.github.io/dpum/blog/2013/05/16/flooding-the-hyperspace/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/dpum/blog/2013/05/14/hello-world/" title="Previous Post: Hello World">&laquo; Hello World</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/dpum/blog/2013/05/16/flooding-the-hyperspace/">Flooding the Hyperspace</a>
+      </li>
+    
+      <li class="post">
+        <a href="/dpum/blog/2013/05/14/hello-world/">Hello World</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - DPUM -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'dpum';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pfac.github.io/dpum/blog/2013/05/16/flooding-the-hyperspace/';
+        var disqus_url = 'http://pfac.github.io/dpum/blog/2013/05/16/flooding-the-hyperspace/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
