@@ -4,7 +4,7 @@
   <title><![CDATA[Desafios de Programação da Universidade do Minho]]></title>
   <link href="http://pfac.github.io/dpum/atom.xml" rel="self"/>
   <link href="http://pfac.github.io/dpum/"/>
-  <updated>2013-05-18T12:48:51+01:00</updated>
+  <updated>2013-05-21T23:13:50+01:00</updated>
   <id>http://pfac.github.io/dpum/</id>
   <author>
     <name><![CDATA[DPUM]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[TIUP Maio 2013]]></title>
+    <link href="http://pfac.github.io/dpum/blog/2013/05/21/tiup-maio-2013/"/>
+    <updated>2013-05-21T22:22:00+01:00</updated>
+    <id>http://pfac.github.io/dpum/blog/2013/05/21/tiup-maio-2013</id>
+    <content type="html"><![CDATA[<p>Avisa-se todos os interessados que amanhã, Quarta-feira, das 17h00 às 20h00, vai decorrer mais uma etapa do <em>Torneio Inter-Universitário de Programação</em>.</p>
+
+<p>Estão todos convidados a participar, independentemente da inexperiência, para tal bastando aparecerem na sala 1.04 (a confirmar). É uma oportunidade para se porem à prova no ambiente de um torneio real, mas num contexto familiar e informal.</p>
+
+<p>Pede-se aos participantes que tragam os <em>code monkeys</em> devidamente domesticados ou controlados por meio de açaimes, coleiras, algemas ou outros objetos restritivos.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flooding the Hyperspace]]></title>
