@@ -4,7 +4,7 @@
   <title><![CDATA[Desafios de Programação da Universidade do Minho]]></title>
   <link href="http://pfac.github.io/dpum/atom.xml" rel="self"/>
   <link href="http://pfac.github.io/dpum/"/>
-  <updated>2013-05-21T23:13:50+01:00</updated>
+  <updated>2013-05-25T01:13:07+01:00</updated>
   <id>http://pfac.github.io/dpum/</id>
   <author>
     <name><![CDATA[DPUM]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ICPC World Finals Warm-up]]></title>
+    <link href="http://pfac.github.io/dpum/blog/2013/05/25/icpc-world-finals-warm-up/"/>
+    <updated>2013-05-25T00:44:00+01:00</updated>
+    <id>http://pfac.github.io/dpum/blog/2013/05/25/icpc-world-finals-warm-up</id>
+    <content type="html"><![CDATA[<p>Hoje, Sábado, dia 25 de Maio, o site <a href="http://uva.onlinejudge.org/">UVa Online Judge</a> vai organizar um concurso de preparação para as finais mundiais em São Petersburgo. O concurso começa às 10:00 da manhã (hora de Portugal), e é aberto a todos os utilizadores do site (basta efectuar <a href="http://uva.onlinejudge.org/index.php?option=com_comprofiler&amp;task=registers">registo</a>). Para mais detalhes relativos ao concurso especificamente, usem <a href="http://uva.onlinejudge.org/index.php?option=com_content&amp;task=view&amp;id=2&amp;Itemid=10">este link</a>.</p>
+
+<p>Apesar deste concurso estar num nível de exigência bastante alto, incentivamos todos os interessados a participar. <strong>Não perdem nada</strong>, e este tipo de experiências é o melhor incentivo para continuarem a melhorar as vossas capacidades. Pensem nisto como o apogeu da &quot;modalidade&quot; que praticam. Se sonham em ser os melhores, aprendam com eles.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[TIUP Maio 2013]]></title>
