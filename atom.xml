@@ -4,7 +4,7 @@
   <title><![CDATA[Desafios de Programação da Universidade do Minho]]></title>
   <link href="http://pfac.github.io/dpum/atom.xml" rel="self"/>
   <link href="http://pfac.github.io/dpum/"/>
-  <updated>2013-05-25T01:13:07+01:00</updated>
+  <updated>2013-05-30T00:00:52+01:00</updated>
   <id>http://pfac.github.io/dpum/</id>
   <author>
     <name><![CDATA[DPUM]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Shortest Path to Pretty Much Anywhere]]></title>
+    <link href="http://pfac.github.io/dpum/blog/2013/05/29/the-shortest-path-to-pretty-much-anywhere/"/>
+    <updated>2013-05-29T12:25:00+01:00</updated>
+    <id>http://pfac.github.io/dpum/blog/2013/05/29/the-shortest-path-to-pretty-much-anywhere</id>
+    <content type="html"><![CDATA[<h2 id="toc_4">Resumo da sessão #4</h2>
+
+<ul>
+<li>Revisão do conceito de grafo e das estruturas de dados usadas na sua representação;</li>
+<li>O algoritmo de Dijkstra, também conhecido como o algoritmo do <a href="http://en.wikipedia.org/wiki/Dijkstra&#x27;s_algorithm">Caminho Mais Curto</a>;</li>
+<li>Modificação da implementação da sessão #3 para o problema <strong><a href="https://github.com/pfac/dpum/tree/master/problems/003-hyperspace-jumping">Hyperspace Jumping</a></strong>, agora incluindo a restrição da energia e usando o algoritmo de Dijkstra.</li>
+<li>Batismo implícito dos participantes com nomes muito mais fixes que aqueles que trazem no Cartão de Cidadão.</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ICPC World Finals Warm-up]]></title>
