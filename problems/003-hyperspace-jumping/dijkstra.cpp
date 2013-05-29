@@ -69,7 +69,7 @@ void dijkstra (int start) {
 
 		// does this, the next cheapest destiny exceed our available energy?
 		// if yes, just stop everything, we are not getting better than this
-		if (costs[i] > (energy - 1)) break;
+		if (costs[i] >= energy) break;
 
 		// otherwise, add it to our collection of affordable traveling destinies
 		found.push(i);
