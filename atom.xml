@@ -4,7 +4,7 @@
   <title><![CDATA[Desafios de Programação da Universidade do Minho]]></title>
   <link href="http://pfac.github.io/dpum/atom.xml" rel="self"/>
   <link href="http://pfac.github.io/dpum/"/>
-  <updated>2013-05-30T00:04:53+01:00</updated>
+  <updated>2013-06-04T01:14:37+01:00</updated>
   <id>http://pfac.github.io/dpum/</id>
   <author>
     <name><![CDATA[DPUM]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Acid rain, acid rain]]></title>
+    <link href="http://pfac.github.io/dpum/blog/2013/06/04/acid-rain/"/>
+    <updated>2013-06-04T01:04:00+01:00</updated>
+    <id>http://pfac.github.io/dpum/blog/2013/06/04/acid-rain</id>
+    <content type="html"><![CDATA[<p>As soluções para o problema <em>The Toxic Clouds of Proxima III</em> acabaram de ser colocadas no <a href="https://github.com/pfac/dpum/tree/master/problems/002-the-toxic-clouds-of-proxima-3">repositório</a>.</p>
+
+<p>Foram implementadas as soluções recorrendo ao algoritmo de Flood Fill e ao algoritmo de Dijkstra. A implementação utilizando o algoritmo A* fica como desafio até ao dia da sessão, caso contrário iremos usar a sessão para extender a implementação do algoritmo de Dijkstra.</p>
+
+<p>Nenhuma das soluções foi submetida no sistema <a href="mooshak.di.uminho.pt">Mooshak</a>, pelo que podem conter algum erro. Oferece-se uma :beer: a quem detectar problemas e os souber justificar.</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Shortest Path to Pretty Much Anywhere]]></title>
