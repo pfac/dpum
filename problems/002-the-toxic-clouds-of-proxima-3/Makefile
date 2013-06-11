@@ -1,6 +1,6 @@
 CXXFLAGS ?= -Wall -Wextra -pedantic
 
-EXECS = flood dijkstra
+EXECS = flood dijkstra a_star
 
 .PHONY: default debug clean
 
