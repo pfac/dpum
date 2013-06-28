@@ -4,7 +4,7 @@
   <title><![CDATA[Desafios de Programação da Universidade do Minho]]></title>
   <link href="http://pfac.github.io/dpum/atom.xml" rel="self"/>
   <link href="http://pfac.github.io/dpum/"/>
-  <updated>2013-06-04T01:35:37+01:00</updated>
+  <updated>2013-06-28T18:05:03+01:00</updated>
   <id>http://pfac.github.io/dpum/</id>
   <author>
     <name><![CDATA[DPUM]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Song of the Tumbleweed]]></title>
+    <link href="http://pfac.github.io/dpum/blog/2013/06/27/the-song-of-the-tumbleweed/"/>
+    <updated>2013-06-27T18:00:00+01:00</updated>
+    <id>http://pfac.github.io/dpum/blog/2013/06/27/the-song-of-the-tumbleweed</id>
+    <content type="html"><![CDATA[<p>E quando todos já se tinham esquecido…</p>
+
+<p><strong>Quinta-feira, dia 27 de Junho, às 16h, na sala DI-1.09</strong> vai decorrer a próxima sessão de treino do DPUM.</p>
+
+<p>Adicionalmente, vamos usar esta sessão para discutir a falta de comunicação que tem havido, mesmo existindo uma maior diversidade de canais disponíveis, e para decidir a continuação das actividades do clube.</p>
+
+<p>Do vosso &quot;El comandante&quot; (sim, porque se ninguém se pronunciar isto tem de ser uma ditadura).</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Git for newbies]]></title>
