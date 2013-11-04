@@ -9,7 +9,7 @@ using namespace std;
 int energy;
 int start_x, start_y;// initial position
 int width, height;// dimensions of the storm
-bool visited[MAX_ELEMS];// the visited
+bool visited[MAX_ELEMS] = {0};// the visited
 int costs[MAX_ELEMS];// the costs of moving in the storm
 int min_cost;// the minimum cost in the storm
 int steps[MAX_ELEMS];// the total steps to get to a cell

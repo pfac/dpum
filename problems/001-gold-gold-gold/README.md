@@ -39,7 +39,9 @@ The input starts by a line containing the number of columns Cs and rows Rs on th
 ## Output
 
 Your program should print a line with the number of gold tiles Glóin can reach.
-Sample Input 1
+
+
+## Sample Input 1
 
 ```
 40 20
