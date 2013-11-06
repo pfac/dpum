@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Read in, Write out - Desafios de Programação da Universidade do Minho</title>
+  <meta name="author" content="DPUM">
+
+  
+  <meta name="description" content="Uma tarefa comum a todos os problemas num torneio é a interpretação de input. Isto é algo característico de cada linguagem. C usa scanf, Java usa &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pfac.github.io/dpum/blog/2013/10/25/read-in-write-out">
+  <link href="/dpum/favicon.png" rel="icon">
+  <link href="/dpum/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/dpum/atom.xml" rel="alternate" title="Desafios de Programação da Universidade do Minho" type="application/atom+xml">
+  <script src="/dpum/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/dpum/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/dpum/">Desafios de Programação da Universidade do Minho</a></h1>
+  
+    <h2>Visitors are asked not to feed the code monkey</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/dpum/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pfac.github.io/dpum" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/dpum/">Blog</a></li>
+  <li><a href="/dpum/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Read in, Write Out</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-25T20:00:00+01:00" pubdate data-updated="true">Oct 25<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Uma tarefa comum a todos os problemas num torneio é a interpretação de input. Isto é algo característico de cada linguagem. C usa <code>scanf</code>, Java usa <code>InputStream</code>, e C++ usa <code>std::stream</code>.</p>
+
+<p>Este artigo tem como objectivo mostrar como é feita a leitura dos parâmetros em C++, algo que pode ser um desafio para os mais inexperientes com a linguagem.</p>
+
+<!--more-->
+
+<h2 id="toc_91">Hashmat the Brave Warrior</h2>
+
+<p><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=996">Este problema</a> é um bom exemplo para mostrar a leitura de parâmetros em C++. A resolução do problema consiste em ler pares de números e imprimir a sua diferença.</p>
+
+<p>Ao contrário do que acontece com C, a forma ideal de percorrer um <code>stream</code> até ao fim (como o <em>standard input</em>) em C++ consiste em utilizar o próprio <code>stream</code> como condição de teste. Isto permite que seja testada não só a condição de <em>end-of-file</em>, mas também outros erros que impossibilitem a leitura de mais parâmetros.</p>
+
+<p>Junta-se a isto uns pozinhos para calcular a diferença de dois inteiros de 64 bits (porque o limite do problema exige pelo menos 33 bits), e temos o problema resolvido.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="cp">#include &lt;iostream&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#define DIFF(x,y) ((x) &gt; (y) ? (x) - (y) : (y) - (x))</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="n">main</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">while</span> <span class="p">(</span><span class="n">cin</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">army</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</span><span class='line'>      <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">army</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="n">army</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>      <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">DIFF</span><span class="p">(</span><span class="n">army</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">army</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span><span class='line'>      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">diff</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<h2 id="toc_92">The line of offense</h2>
+
+<p>Uma variante também comum nos problemas de torneios é a leitura de parâmetros linha por linha. Ao contrário do que acontece com C, em que tem de ser estabelecido um <em>buffer</em> de tamanho fixo, em C++ é possível guardar toda a linha numa <code>string</code> usando a função <code>getline</code>. Usando depois um <code>stringstream</code>, os dados podem ser obtidos a partir da mesma forma que seriam a partir do <em>standard input</em>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="cp">#include &lt;iostream&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;sstream&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#define DIFF(x,y) ((x) &gt; (y) ? (x) - (y) : (y) - (x))</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="n">main</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">string</span> <span class="n">line</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>      <span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
+</span><span class='line'>      <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">army</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">line</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">ss</span> <span class="o">&gt;&gt;</span> <span class="n">army</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="n">army</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">DIFF</span><span class="p">(</span><span class="n">army</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">army</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">diff</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">DPUM</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-25T20:00:00+01:00" pubdate data-updated="true">Oct 25<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/dpum/blog/categories/c-plus-plus/'>c++</a>, <a class='category' href='/dpum/blog/categories/snippets/'>snippets</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pfac.github.io/dpum/blog/2013/10/25/read-in-write-out/" data-via="" data-counturl="http://pfac.github.io/dpum/blog/2013/10/25/read-in-write-out/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/dpum/blog/2013/10/25/we-are-back/" title="Previous Post: BOOM! We're back!">&laquo; BOOM! We're back!</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/dpum/blog/2013/10/25/read-in-write-out/">Read in, Write Out</a>
+      </li>
+    
+      <li class="post">
+        <a href="/dpum/blog/2013/10/25/we-are-back/">BOOM! We're Back!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/dpum/blog/2013/06/27/the-song-of-the-tumbleweed/">The Song of the Tumbleweed</a>
+      </li>
+    
+      <li class="post">
+        <a href="/dpum/blog/2013/06/04/git-for-newbies/">Git for Newbies</a>
+      </li>
+    
+      <li class="post">
+        <a href="/dpum/blog/2013/06/04/acid-rain/">Acid Rain, Acid Rain</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - DPUM -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'dpum';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pfac.github.io/dpum/blog/2013/10/25/read-in-write-out/';
+        var disqus_url = 'http://pfac.github.io/dpum/blog/2013/10/25/read-in-write-out/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

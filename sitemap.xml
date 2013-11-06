@@ -2,48 +2,56 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://pfac.github.io/dpum/blog/2013/05/14/hello-world/</loc>
-        <lastmod>2013-06-28T17:40:06+01:00</lastmod>
+        <lastmod>2013-11-06T22:26:11+00:00</lastmod>
     </url>
     <url>
         <loc>http://pfac.github.io/dpum/blog/2013/05/16/flooding-the-hyperspace/</loc>
-        <lastmod>2013-06-28T17:40:06+01:00</lastmod>
+        <lastmod>2013-11-06T22:26:11+00:00</lastmod>
     </url>
     <url>
         <loc>http://pfac.github.io/dpum/blog/2013/05/21/tiup-maio-2013/</loc>
-        <lastmod>2013-06-28T17:40:06+01:00</lastmod>
+        <lastmod>2013-11-06T22:26:11+00:00</lastmod>
     </url>
     <url>
         <loc>http://pfac.github.io/dpum/blog/2013/05/25/icpc-world-finals-warm-up/</loc>
-        <lastmod>2013-06-28T17:40:06+01:00</lastmod>
+        <lastmod>2013-11-06T22:26:11+00:00</lastmod>
     </url>
     <url>
         <loc>
             http://pfac.github.io/dpum/blog/2013/05/29/the-shortest-path-to-pretty-much-anywhere/
         </loc>
-        <lastmod>2013-06-28T17:40:06+01:00</lastmod>
+        <lastmod>2013-11-06T22:26:12+00:00</lastmod>
     </url>
     <url>
         <loc>http://pfac.github.io/dpum/blog/2013/06/04/acid-rain/</loc>
-        <lastmod>2013-06-28T17:40:06+01:00</lastmod>
+        <lastmod>2013-11-06T22:26:12+00:00</lastmod>
     </url>
     <url>
         <loc>http://pfac.github.io/dpum/blog/2013/06/04/git-for-newbies/</loc>
-        <lastmod>2013-06-28T17:40:06+01:00</lastmod>
+        <lastmod>2013-11-06T22:26:12+00:00</lastmod>
     </url>
     <url>
         <loc>http://pfac.github.io/dpum/blog/2013/06/27/the-song-of-the-tumbleweed/</loc>
-        <lastmod>2013-06-28T18:04:10+01:00</lastmod>
+        <lastmod>2013-11-06T22:26:12+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pfac.github.io/dpum/blog/2013/10/25/we-are-back/</loc>
+        <lastmod>2013-11-06T22:26:12+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pfac.github.io/dpum/blog/2013/10/25/read-in-write-out/</loc>
+        <lastmod>2013-11-06T23:03:35+00:00</lastmod>
     </url>
     <url>
         <loc>http://pfac.github.io/dpum/blog/archives/</loc>
-        <lastmod>2013-06-28T18:04:10+01:00</lastmod>
+        <lastmod>2013-11-06T23:03:35+00:00</lastmod>
     </url>
     <url>
         <loc>http://pfac.github.io/dpum/</loc>
-        <lastmod>2013-06-28T18:04:10+01:00</lastmod>
+        <lastmod>2013-11-06T23:03:35+00:00</lastmod>
     </url>
     <url>
         <loc>http://pfac.github.io/dpum/robots.txt</loc>
-        <lastmod>2013-06-28T17:40:07+01:00</lastmod>
+        <lastmod>2013-11-06T22:25:28+00:00</lastmod>
     </url>
 </urlset>

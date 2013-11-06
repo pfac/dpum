@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: snippets | Desafios de Programação da Universidade do Minho]]></title>
+  <link href="http://pfac.github.io/dpum/blog/categories/snippets/atom.xml" rel="self"/>
+  <link href="http://pfac.github.io/dpum/"/>
+  <updated>2013-11-06T23:03:36+00:00</updated>
+  <id>http://pfac.github.io/dpum/</id>
+  <author>
+    <name><![CDATA[DPUM]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Read in, Write out]]></title>
+    <link href="http://pfac.github.io/dpum/blog/2013/10/25/read-in-write-out/"/>
+    <updated>2013-10-25T20:00:00+01:00</updated>
+    <id>http://pfac.github.io/dpum/blog/2013/10/25/read-in-write-out</id>
+    <content type="html"><![CDATA[<p>Uma tarefa comum a todos os problemas num torneio é a interpretação de input. Isto é algo característico de cada linguagem. C usa <code>scanf</code>, Java usa <code>InputStream</code>, e C++ usa <code>std::stream</code>.</p>
+
+<p>Este artigo tem como objectivo mostrar como é feita a leitura dos parâmetros em C++, algo que pode ser um desafio para os mais inexperientes com a linguagem.</p>
+
+<!--more-->
+
+<h2 id="toc_62">Hashmat the Brave Warrior</h2>
+
+<p><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=996">Este problema</a> é um bom exemplo para mostrar a leitura de parâmetros em C++. A resolução do problema consiste em ler pares de números e imprimir a sua diferença.</p>
+
+<p>Ao contrário do que acontece com C, a forma ideal de percorrer um <code>stream</code> até ao fim (como o <em>standard input</em>) em C++ consiste em utilizar o próprio <code>stream</code> como condição de teste. Isto permite que seja testada não só a condição de <em>end-of-file</em>, mas também outros erros que impossibilitem a leitura de mais parâmetros.</p>
+
+<p>Junta-se a isto uns pozinhos para calcular a diferença de dois inteiros de 64 bits (porque o limite do problema exige pelo menos 33 bits), e temos o problema resolvido.</p>
+
+<p>```c++</p>
+
+<h1 id="toc_63">include <iostream></h1>
+
+<p>using namespace std;</p>
+
+<h1 id="toc_64">define DIFF(x,y) ((x) &gt; (y) ? (x) - (y) : (y) - (x))</h1>
+
+<p>int main () {
+    while (cin) {
+        long long int army[2];
+        cin &gt;&gt; army[0] &gt;&gt; army[1];
+        long long int diff = DIFF(army[0], army[1]);
+        cout &lt;&lt; diff &lt;&lt; endl;
+    }
+    return 0;
+}
+```</p>
+
+<h2 id="toc_65">The line of offense</h2>
+
+<p>Uma variante também comum nos problemas de torneios é a leitura de parâmetros linha por linha. Ao contrário do que acontece com C, em que tem de ser estabelecido um <em>buffer</em> de tamanho fixo, em C++ é possível guardar toda a linha numa <code>string</code> usando a função <code>getline</code>. Usando depois um <code>stringstream</code>, os dados podem ser obtidos a partir da mesma forma que seriam a partir do <em>standard input</em>.</p>
+
+<p>```c++</p>
+
+<h1 id="toc_66">include <iostream></h1>
+
+<h1 id="toc_67">include <sstream></h1>
+
+<p>using namespace std;</p>
+
+<h1 id="toc_68">define DIFF(x,y) ((x) &gt; (y) ? (x) - (y) : (y) - (x))</h1>
+
+<p>int main () {
+    string line;</p>
+<div class="highlight"><pre><span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
+    <span class="n">long</span> <span class="n">long</span> <span class="n">int</span> <span class="n">army</span><span class="p">[</span>2<span class="p">];</span>
+
+    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">line</span><span class="p">;</span>
+    <span class="n">ss</span> <span class="o">&gt;&gt;</span> <span class="n">army</span><span class="p">[</span>0<span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="n">army</span><span class="p">[</span>1<span class="p">];</span>
+
+    <span class="n">long</span> <span class="n">long</span> <span class="n">int</span> <span class="n">diff</span> <span class="p">=</span> <span class="n">DIFF</span><span class="p">(</span><span class="n">army</span><span class="p">[</span>0<span class="p">],</span> <span class="n">army</span><span class="p">[</span>1<span class="p">]);</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">diff</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">return</span> 0<span class="p">;</span>
+</pre></div>
+<p>}
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

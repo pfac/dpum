@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: news | Desafios de Programação da Universidade do Minho]]></title>
+  <link href="http://pfac.github.io/dpum/blog/categories/news/atom.xml" rel="self"/>
+  <link href="http://pfac.github.io/dpum/"/>
+  <updated>2013-11-06T23:03:36+00:00</updated>
+  <id>http://pfac.github.io/dpum/</id>
+  <author>
+    <name><![CDATA[DPUM]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[BOOM! We're back!]]></title>
+    <link href="http://pfac.github.io/dpum/blog/2013/10/25/we-are-back/"/>
+    <updated>2013-10-25T18:37:00+01:00</updated>
+    <id>http://pfac.github.io/dpum/blog/2013/10/25/we-are-back</id>
+    <content type="html"><![CDATA[<p>Estamos de volta! Novo ano, novo formato, novas pessoas e novas ideias.</p>
+
+<p>Já foi na passada Quinta-feira (dia 24) que se realizou a primeira sessão deste ano letivo 2013/2014, com um sucesso acima do esperado.</p>
+
+<!--more-->
+
+<h2 id="toc_76">New people and new ideas</h2>
+
+<p>O DPUM conta agora com mais elementos e uma proximidade maior do núcleo de estudantes de Engenharia Informática. A nova direção do CeSIUM constitui neste momento uma das duas equipas prontas a enfrentar os desafios das competições inter-universitárias em torneios de programação. Adicionalmente, juntam-se ainda à equipa de organizadores, com novas ideias para dinamizar o clube de forma a cativar a participação crescente dos alunos.</p>
+
+<p>As ideias para este ano letivo incluem, além de um novo formato para as sessões, a completa integração do clube nas atividades do CeSIUM, uma nova plataforma na web com ferramentas para enriquecer o clube, e ainda umas competições amigáveis para animar as sessões e talvez premiar os mais dotados.</p>
+
+<h2 id="toc_77">New format</h2>
+
+<p>Neste novo ano letivo o DPUM vai contar com algumas mudanças. A vertente de competição mantém-se com vista a preparar os interessados em participar em torneios de programação das capacidades necessárias para o sucesso. O ambiente destas competições difere significativamente daquele que os alunos encontram no ambiente académico.</p>
+
+<p>Por outro lado o DPUM vai agora de encontro a uma necessidade crescente dos alunos da LEI, disponibilizando semanalmente um espaço informal onde podem procurar ajuda, quer estejam a iniciar-se no mundo da programação ou procurem apenas evoluir.</p>
+
+<p>As portas estão abertas, todas as Quintas-feiras, das 18h às 20h.</p>
+
+<h2 id="toc_78">Also new</h2>
+
+<p><strong>[Meet Kodos]</strong>, a nova mascote do DPUM. Este primata de aspecto contrariado, à semelhança de um verdadeiro code monkey, acompanhará os participantes do DPUM nos próximos tempos. Se isto correr bem até pode haver <em>merchandising</em> (entenda-se t-shirts). A imagem do Kodos é da autoria de <a href="http://pt.linkedin.com/pub/jo%C3%A3o-pereira/33/ba1/3a/">João Pereira</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
